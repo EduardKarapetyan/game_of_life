@@ -7,33 +7,32 @@ var matrix = [[0, 0, 1, 0, 0],
     [1, 1, 0, 0, 0]
 ];
 
-/*
-for (let i = 0; i < 50; i++) {
+
+for (let i = 0; i < 25; i++) {
     matrix[i] = [];
-    for (let j = 0; j < 50; j++) {
+    for (let j = 0; j < 25; j++) {
         matrix[i][j] = 0;
     }
 }
-
 for (let i = 0; i < 5; i++) {
     let x = Math.floor(Math.random()*matrix.length);
     let y = Math.floor(Math.random()*matrix[0].length);
-    if (matrix[x][y] == 1){
+    /*if (matrix[x][y] == 1){
         i--;
         continue;
-    }
+    }*/
     matrix[x][y] = 1;
 }
 for (let i = 0; i < 5; i++) {
     let x = Math.floor(Math.random() * matrix.length);
     let y = Math.floor(Math.random() * matrix[0].length);
-    if (matrix[x][y] == 2) {
+    /*if (matrix[x][y] == 2) {
         i--;
         continue;
-    }
+    }*/
     matrix[x][y] = 2;
 }
-*/
+
 
 
 
@@ -43,7 +42,7 @@ var xotakerArr = [];
 
 
 function setup() {
-    frameRate(25);
+    frameRate(5);
     createCanvas(matrix.length * side, matrix.length * side);
     background('#acacac');
 
@@ -83,17 +82,22 @@ function draw() {
             }
         }
     }
-    if (frameCount % 6 == 0) {
+   /* if (frameCount % 6 == 0)*/ {
         for (var i in grassArr) {
             grassArr[i].bazmanal();
         }
     }
-    
-    if (frameCount % 5 === 0) {
+
+    /*if (frameCount % 5 === 0)*/ {
         for (var i in xotakerArr) {
             xotakerArr[i].sharjvel();
         }
+   }
+    for (var i in xotakerArr) {
+        xotakerArr[i].bazmanal();
     }
-   
-}
+    for (var i in xotakerArr) {
+        xotakerArr[i].mahanal();
 
+    }
+}
